@@ -1,5 +1,7 @@
 package LN;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Element;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
@@ -15,8 +17,10 @@ public class User {
 	String payment_name;
 	String aut_sys_name;
 	
+	@Element(column="email_res")
 	List<Reservation> bookings = new ArrayList<Reservation>();
-	
+	@Column(name="code air")
+	static Airport a;
 	
 
 	public User(String email, String password, String payment_name, String aut_sys_name) {
@@ -25,6 +29,8 @@ public class User {
 		this.password = password;
 		this.payment_name = payment_name;
 		this.aut_sys_name = aut_sys_name;
+		a=new Airport(99,"San Sebastian");
+		a.setCode(a.getCode()-1);
 	}
 
 	public String getEmail() {

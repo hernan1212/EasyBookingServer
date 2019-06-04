@@ -1,8 +1,18 @@
 package LN;
 
-public class Payment {
-	String code;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.jdo.annotations.Element;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
+public class Payment {
+	@PrimaryKey
+	String code;
+	@Element(column="code_res")
+	List<Reservation> res=new ArrayList<>();
 	
 	public Payment(String code) {
 		super();

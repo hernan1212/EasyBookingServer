@@ -10,13 +10,12 @@ public class AP_Aero
 	private Airport a=new Airport(1,"Barcelona");
 	private Airport b=new Airport(2,"Mexico");
 	private ArrayList<Flight> vuelos = new ArrayList<Flight>();
-	private ArrayList<Reservation> reser = new ArrayList<Reservation>();
 	private GatewayEB G=new GatewayEB();
 	private DAO dao=new DAO();
 	public AP_Aero() 
 	{
-		 vuelos.add(new Flight(123,"01/02/2018","02/02/2018",500,350, reser,a,b));
-		 vuelos.add(new Flight(124,"01/02/2018","02/02/2018",200,600, reser,b,a));
+		 vuelos.add(new Flight(123,"01/02/2018","02/02/2018",500,350,a,b));
+		 vuelos.add(new Flight(124,"01/02/2018","02/02/2018",200,600,b,a));
 	}
 
 	public synchronized List<Flight> BuscarVuelos(String origen, String destination, String fecha, int passenger) 

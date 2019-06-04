@@ -104,16 +104,16 @@ public class DAO implements IDAO {
 	public boolean ComprobarUsuario(String nombre, String contrasena) {
 		persistentManager = persistentManagerFactory.getPersistenceManager();
 		transaction = persistentManager.currentTransaction();
-			
 		try {
 		    transaction.begin();
+		    System.out.println(1);
 		    Query<User> query = persistentManager.newQuery(User.class);
-			query.setFilter("email == " + nombre + " && password == " + contrasena );
-
+			query.setFilter("(email=='" + nombre + "')&&(password=='" + contrasena +"')" );
+			System.out.println(3);
 			@SuppressWarnings("unchecked")
 			List<User> accounts = (List<User>) query.execute();
 			if(accounts.size()!=1)throw new Exception();
-
+			System.out.println(4);
 		    transaction.commit();
 		} catch(Exception ex) {
 			System.err.println("* Exception executing a query: " + ex.getMessage());

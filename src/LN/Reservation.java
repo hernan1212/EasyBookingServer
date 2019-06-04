@@ -1,5 +1,6 @@
 package LN;
 
+import javax.jdo.annotations.Column;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
@@ -8,9 +9,13 @@ public class Reservation {
 
 	@PrimaryKey
 	String id;
+	
 	int num_seats;
+	@Column(name="code_res")
 	Payment Pay;
+	@Column(name="email_res")
 	User u;
+	@Column(name="id_res")
 	Flight f;
 	public Reservation(String id, int num_seats, Payment pay, User u, Flight f) {
 		super();

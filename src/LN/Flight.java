@@ -1,5 +1,6 @@
 package LN;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.annotations.Column;
@@ -19,22 +20,21 @@ public class Flight {
 	boolean aero;
 	int precio;
 	
-	@Element(column="id")
-    List<Reservation> bookings;
-    @Column(name="code")
+	@Element(column="id_res")
+    List<Reservation> bookings= new ArrayList<>();
+    
+    @Column(name="cod_d")
     Airport Departure;
-    @Column(name="code")
+    @Column(name="cod_a")
     Airport Arrival;
 
-	public Flight(int flight_number, String departure_date, String arrival_date, int total_seats, int precio,
-			List<Reservation> bookings, Airport departure, Airport arrival) {
+	public Flight(int flight_number, String departure_date, String arrival_date, int total_seats, int precio, Airport departure, Airport arrival) {
 		super();
 		this.flight_number = flight_number;
 		this.departure_date = departure_date;
 		this.arrival_date = arrival_date;
 		this.total_seats = total_seats;
 		this.precio = precio;
-		this.bookings = bookings;
 		Departure = departure;
 		Arrival = arrival;
 	}

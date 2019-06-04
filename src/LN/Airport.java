@@ -14,13 +14,13 @@ public class Airport {
     int code = 0;
 	String place;
 	
-	@Element(column="flight_number")
+	@Element(column="cod_d")
 	List<Flight> departure_flights = new ArrayList<>();
 	
-	@Element(column="flight_number")
+	@Element(column="cod_a")
 	List<Flight> arrival_flights = new ArrayList<>();
 	
-	@Element(column="email")
+	@Element(column="code_air")
 	List<User> usuarios = new ArrayList<>();
 
 	
