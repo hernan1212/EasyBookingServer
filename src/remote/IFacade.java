@@ -12,4 +12,5 @@ public interface IFacade extends Remote {
     public boolean PagoReserva(String usuario, int precio) throws RemoteException; 
     public boolean IniciarSesion(String usuario, String contrasena) throws RemoteException; 
     public boolean NuevoUsuario(String usuario, String contrasena, String auth_sys_name, String Payment) throws RemoteException; 
- }
+    String sayHello() throws RemoteException;
+}

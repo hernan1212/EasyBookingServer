@@ -52,4 +52,10 @@ public class Facade extends UnicastRemoteObject implements IFacade
 	public boolean PagoReserva(String usuario, int precio) throws RemoteException {
 		return pagoServ.PagoReserva(usuario, precio);
 	}
+
+	@Override
+	public String sayHello() throws RemoteException {
+		
+		return "Holaaaaaaaaa";
+	}
 }
